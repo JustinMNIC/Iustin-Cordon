@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>  
     <head>
         <meta charset="utf-8">
         <title>Iustin Cordon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css\main_style.css">
+        <link rel="stylesheet" href="{% static 'main_page/main_style.css' %}">
         
     </head>
     
@@ -75,6 +77,6 @@
             </div>
         </section>
 
-        <script src="js/main_scripts.js"></script>
+        <script src="{% static 'main_page/main_scripts.js' %}"></script>
     </body>
 </html>
