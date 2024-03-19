@@ -2,7 +2,6 @@
 var height_navbar = document.getElementById('navbar').offsetHeight;
 document.getElementById('section_home').style.paddingTop = height_navbar +'px';
 
-
 // animation welcome 
 document.addEventListener('DOMContentLoaded',function(event){
   var dataText = 
