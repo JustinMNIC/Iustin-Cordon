@@ -18,10 +18,9 @@
             <div id = "menu_links">
                 <a href="#home">Home</a>
                 <a href="achievements">Achievements</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#about_me">About me</a>
-                <a href="CV">CV</a>
+                <a href="#projects">My projects</a>
+                <a href="#about_me">Find out more about me</a>
+                <a href="CV">Download CV</a>
             </div>
 
         </section>
@@ -38,30 +37,30 @@
                 
                     <div id = "statistics_1", class = strats_zoom>
                         <h3 id = "Websites_build">Websites:</h3>  
-                        <a id = "Websites_build_statistics">3</a>
+                        <a id = "Websites_build_statistics">{{ websites_projects_count }}</a>
                     </div>
 
                     <div id = "statistics_2", class = strats_zoom>
                         <h3 id ="WebAppps_build">Web Apps:</h3>
-                        <a id = "WebAppps_build_statistics">5</a>
+                        <a id = "WebAppps_build_statistics">{{ app_projects_count }}</a>
                     </div>
 
                     <div id = "statistics_3", class = strats_zoom>
                         <h3 id = "Local_programs">Local programs:</h3>
-                        <a id = "Local_programs_statistics">2</a>
+                        <a id = "Local_programs_statistics"> {{ local_projects_count }} </a>
                     </div>
                 </div>
                 
                 <div id = "second_3_achivements"> <!-- 3-6 -->
                 
                     <div id = "statistics_4", class = strats_zoom>
-                        <h3 id = "Scripts_build">Scripts:</h3>
-                        <a id = "Scripts_build_statistics">3</a>
+                        <h3 id = "Bots_build">Bots:</h3>
+                        <a id = "Bots_build_statistics"> {{ bots_projects_count }} </a>
                     </div>
 
                     <div id = "statistics_5", class = strats_zoom>
                         <h3 id = "Games_build">Games:</h3>
-                        <a id = "games_build_statistics">3</a>
+                        <a id = "games_build_statistics"> {{ games_projects_count }} </a>
                     </div>
 
                     <div id = "statistics_6", class = strats_zoom>
@@ -70,11 +69,32 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div id = "div_projects">
-                
+        <section id = "section_projects">
+            <h1 id = "title_projects"> Projects </h1>
 
+            <div id = "div_search_projects">
+                <input type="text" placeholder="Search...">
             </div>
+
+            <div id = "projects_div"> 
+                {% for project in projects %}
+                <div class="project">
+                    <h3 id = "project_title">{{ project.name }}</h3> 
+                    <p id = "project_description">{{ project.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+
+        </section>
+        
+        <section id = "section_about_me">
+            <h1> About me </h1>
+        </section>
+
+        <section id = "section_something_awosome">
+            <h1> hey check out those memes</h1>
         </section>
 
         <script src="{% static 'main_scripts.js' %}"></script>
