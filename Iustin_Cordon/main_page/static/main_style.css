@@ -134,28 +134,82 @@ span {
   padding-top: 11vh;
 }
 
-#title_projects {
+#h1_title_projects {
   text-align: center;
   font-size: 60px;
   color: white;
 }
 
-#div_search_projects {
-  text-align: right;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+#search_input {
+  background-color: #464646;
+  border-radius: 32px;
+  margin-left: 43vw;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:12vw; /* Initial width */
+  transition: margin-left 0.4s ease-in-out, width 0.4s ease-in-out; /* Add transition for margin-left */
+  text-align: center; 
+}
+#search_input::placeholder {
+  color: #C8C8C8;
 }
 
-#projects_div {
+#search_input:focus {
+  margin-left: 30vw;
+  width: 40vw; /* Change width when focused */
+}
+
+
+.project-container {
   display: flex;
   flex-wrap: wrap;
 }
 
 .project {
-  width: calc(50% - 20px);
-  margin: 10px;
+  border-radius: 35px;
+  width: 55vw; 
+  margin-left: 2vw;
+  margin-top: 5vh;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; 
+}
+
+.project:hover {
+  background-color: #595959;
+
+}
+
+.project.left-enter {
+  animation: move-left-enter 0.5s ease-in-out forwards;
+}
+
+.project.right-enter {
+  animation: move-right-enter 0.5s ease-in-out forwards;
+  margin-left: 41vw;
+}
+
+@keyframes move-left-enter {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes move-right-enter {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.project.hide {
+  animation: move-right-exit 0.5s ease-in-out forwards;
+  opacity: 0; 
+}
+
+@keyframes move-right-exit {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
 }
 
 #project_title {
@@ -166,4 +220,78 @@ span {
 #project_description {
   font-size: 20px;
   color: #6A9955;
+}
+
+/* End Projects and start: about me*/
+
+#section_about_me {
+  background-color: #1E1E1E;
+  width: 100%;
+  margin-left: 0px;
+  padding-bottom: 7.5vh;
+  padding-top: 11vh;
+}
+
+#h1_title_about {
+  transition: text-decoration 1.5s ease;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+
+}
+
+#h1_title_about:hover {
+  text-decoration: underline;
+  text-decoration-color: #CE9178;
+}
+
+#content {
+  display: flex;
+}
+
+#skills {
+  width: 30vw;
+  margin-left: 1.5vw;
+  place-items: center;
+  color: #C586C0;
+}
+
+
+#me_myself_and_I {
+  text-align: left;
+  width: 65%;
+}
+
+#h2_my_name_is_strange {
+  color: white;
+}
+
+#p_about_me {
+  color: #6A9955
+}
+
+
+/* End about me and start: footer*/
+
+#footer {
+  background-color: #1E1E1E;
+  width: 100%;
+  margin-left: 0px;
+  padding-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#footer_text_get_in_touch {
+  color: white;
+  font-size: 30px;
+}
+
+#link_github, #footer_text_phone, #footer_text_email, #link_linkedin, #link_whatsapp, #link_telegram  {
+  color: #6ec2de;
+}
+
+#footer_text_justin_mnic {
+  color: #CE9178
 }

@@ -12,6 +12,18 @@ class Project(models.Model):
     def __str__(self):
         return self.name
     
+    def get_description(self):
+        return self.description
+    
+    def get_link_to_github(self):
+        return self.link_to_github
+    
+    def get_link_see_in_action(self):
+        return self.link_see_in_action
+    
+    def get_tags(self):
+        return ''.join([tag.name.lower() for tag in self.tags.all()])
+    
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique = True)
     
